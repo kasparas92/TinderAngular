@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,11 @@ import { ListComponent } from './Components/list/list.component';
 import { MessagesComponent } from './Components/messages/messages.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { HomeComponent } from './Components/home/home.component';
+import { UserCardComponent } from './Components/user-card/user-card.component';
+import { JwtInterceptor } from './Interceptor/jwt.interceptor';
+import { UserDetailsComponent } from './Components/user-details/user-details.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { NgxGalleryModule } from 'ngx-gallery-9';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,8 @@ import { HomeComponent } from './Components/home/home.component';
     MessagesComponent,
     RegisterComponent,
     HomeComponent,
+    UserCardComponent,
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,8 +40,12 @@ import { HomeComponent } from './Components/home/home.component';
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot({ positionClass: 'toast-bottom-left' }),
+    TabsModule.forRoot(),
+    NgxGalleryModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

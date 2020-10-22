@@ -4,6 +4,7 @@ import { AuthenticationGuard } from './AuthGuards/authentication.guard';
 import { HomeComponent } from './Components/home/home.component';
 import { ListComponent } from './Components/list/list.component';
 import { MessagesComponent } from './Components/messages/messages.component';
+import { UserDetailsComponent } from './Components/user-details/user-details.component';
 import { UserListComponent } from './Components/user-list/user-list.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     children: [
       { path: 'user', component: UserListComponent },
+      { path: 'user/:id', component: UserDetailsComponent },
       { path: 'messages', component: MessagesComponent },
       { path: 'lists', component: ListComponent },
     ],

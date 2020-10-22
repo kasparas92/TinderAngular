@@ -5,7 +5,7 @@ export interface IMember {
   name: string;
   photoUrl: string;
   age: number;
-  knownAs: string;
+  knowAs: string;
   created: Date;
   lastActive: Date;
   gender: string;
