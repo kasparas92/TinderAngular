@@ -19,6 +19,7 @@ import { JwtInterceptor } from './Interceptor/jwt.interceptor';
 import { UserDetailsComponent } from './Components/user-details/user-details.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from 'ngx-gallery-9';
+import { UserEditComponent } from './Components/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NgxGalleryModule } from 'ngx-gallery-9';
     HomeComponent,
     UserCardComponent,
     UserDetailsComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,
