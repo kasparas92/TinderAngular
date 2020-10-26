@@ -20,6 +20,7 @@ import { UserDetailsComponent } from './Components/user-details/user-details.com
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { UserEditComponent } from './Components/user-edit/user-edit.component';
+import { PhotoEditorComponent } from './Components/photo-editor/photo-editor.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { UserEditComponent } from './Components/user-edit/user-edit.component';
     UserCardComponent,
     UserDetailsComponent,
     UserEditComponent,
+    PhotoEditorComponent,
   ],
   imports: [
     BrowserModule,

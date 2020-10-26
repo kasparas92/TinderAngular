@@ -23,6 +23,18 @@ export class MemberService {
       })
     );
   }
+  getMembersByGender(gender: string) {
+    if (this.members.length > 0) {
+      return of(this.members);
+    }
+    const url = this.baseUrl + 'user/GetByGender/' + gender;
+    return this.http.get<IMember[]>(url).pipe(
+      map((members) => {
+        this.members = members;
+        return members;
+      })
+    );
+  }
   getMemberById(id: number) {
     const member = this.members.find((x) => x.id === id);
     if (member !== undefined) {
@@ -39,5 +51,15 @@ export class MemberService {
         this.members[index] = member;
       })
     );
+  }
+
+  setMainPhoto(id: number) {
+    const url = this.baseUrl + 'user/set-main-photo/' + id;
+    return this.http.put(url, {});
+  }
+
+  deletePhoto(id: number) {
+    const url = this.baseUrl + 'user/delete-photos/' + id;
+    return this.http.delete(url);
   }
 }
