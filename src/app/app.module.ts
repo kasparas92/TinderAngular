@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { UserListComponent } from './Components/user-list/user-list.component';
 import { ListComponent } from './Components/list/list.component';
@@ -21,6 +21,9 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { UserEditComponent } from './Components/user-edit/user-edit.component';
 import { PhotoEditorComponent } from './Components/photo-editor/photo-editor.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DateInputComponent } from './Components/date-input/date-input.component';
+import { TextInputComponent } from './Components/text-input/text-input.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { PhotoEditorComponent } from './Components/photo-editor/photo-editor.com
     UserDetailsComponent,
     UserEditComponent,
     PhotoEditorComponent,
+    DateInputComponent,
+    TextInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,8 @@ import { PhotoEditorComponent } from './Components/photo-editor/photo-editor.com
     ToastrModule.forRoot({ positionClass: 'toast-bottom-left' }),
     TabsModule.forRoot(),
     NgxGalleryModule,
+    BsDatepickerModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

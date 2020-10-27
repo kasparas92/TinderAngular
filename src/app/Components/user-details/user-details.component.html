@@ -2,7 +2,7 @@
   <div class="col-4">
     <div class="card">
       <img
-        src="{{ member.photoUrl }}"
+        src="{{ member.photoUrl || './assets/user.png' }}"
         alt="{{ member.knowAs }}"
         class="card-img-top img-thumbnail"
       />
