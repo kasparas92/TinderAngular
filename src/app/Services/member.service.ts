@@ -37,6 +37,8 @@ export class MemberService {
   }
   getMemberById(id: number) {
     const member = this.members.find((x) => x.id === id);
+    console.log(id);
+    console.log(member);
     if (member !== undefined) {
       return of(member);
     }

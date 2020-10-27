@@ -35,6 +35,7 @@ export class UserEditComponent implements OnInit {
     this.loadMembers();
   }
   public loadMembers() {
+    console.log(this.user);
     this.memberService.getMemberById(this.user.id).subscribe((response) => {
       this.member = response;
     });

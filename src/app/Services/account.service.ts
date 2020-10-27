@@ -38,7 +38,6 @@ export class AccountService {
   }
 
   register(model: any) {
-    console.log(model);
     const url = this.baseUrl + 'account/register';
     return this.http.post(url, model).pipe(
       map((user: IUser) => {
